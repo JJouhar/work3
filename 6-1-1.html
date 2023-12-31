@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive AR with A-Frame</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+
+  <!-- A-Frame scene -->
+  <a-scene>
+    <!-- AR marker (use your own AR marker pattern here) -->
+    <a-marker preset="hiro">
+      <!-- AR entity to be manipulated -->
+      <a-box id="interactiveBox" position="0 0.5 0" color="blue" scale="1 1 1">
+        <!-- Add any other components or nested entities here -->
+      </a-box>
+    </a-marker>
+
+    <!-- Camera rig for AR -->
+    <a-entity camera></a-entity>
+  </a-scene>
+
+  <script>
+    // Get the AR entity
+    const interactiveBox = document.getElementById('interactiveBox');
+
+    // Set a reference distance for interaction
+    const interactionDistance = 2;
+
+    // Listen for the camera component's position changes
+    document.querySelector('[camera]').addEventListener('componentchanged', (event) => {
+      if (event.detail.name === 'position') {
+        // Calculate the distance between the camera and the AR entity
+        const distance = interactiveBox.object3D.position.distanceTo(event.detail.newData);
+
+        // Example: Change color based on distance
+        if (distance < interactionDistance) {
+          interactiveBox.setAttribute('color', 'red');
+        } else {
+          interactiveBox.setAttribute('color', 'blue');
+        }
+
+        // Example: Add movement based on distance
+        const scaleFactor = Math.min(1, distance / interactionDistance);
+        interactiveBox.setAttribute('scale', `${1 + scaleFactor} ${1 + scaleFactor} ${1 + scaleFactor}`);
+      }
+    });
+  </script>
+
+</body>
+</html>
