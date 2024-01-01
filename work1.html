@@ -24,7 +24,6 @@
             scale="0.15 0.15 0.15" 
             animation__rotate = "property: rotation; dur: 8000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;">
         </a-entity>
-
         <a-entity camera></a-entity>
     </a-scene>
     <script>
@@ -34,7 +33,7 @@
             // Example: Change color of the AR entity when spacebar is pressed
             const interactiveEntity = document.getElementById('interactiveEntity')
             interactiveEntity.removeAttribute('gltf-model');
-            interactiveEntity.setAttribute('obj-model', 'obj: decor.obj); mtl: decor.mtl)');
+            interactiveEntity.setAttribute('obj-model:decor.obj; mtl:decor.mtl');
         }
         });
     </script>
