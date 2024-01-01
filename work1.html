@@ -10,9 +10,7 @@
 <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
         <!-- AR entity to be manipulated -->
-        <a-entity 
-        interactiveEntity.setAttribute('material', 'color', 'red');>
-        </a-entity>
+        <a-entity id="interactiveEntity" position="0 0.5 0" scale="1 1 1" color="blue"> </a-entity>
         <a-entity camera></a-entity>
     </a-scene>
     <script>
@@ -20,10 +18,10 @@
         // Check if the pressed key is the spacebar (key code 32)
         if (event.code === 'Space') {
             // Example: Change color of the AR entity when spacebar is pressed
-            interactiveEntity.setAttribute('material', 'color', 'green');
+            const interactiveEntity = document.getElementById('interactiveEntity')
+            interactiveEntity.setAttribute('color', 'red');
         }
         });
     </script>
-    
 </body>
 </html>
