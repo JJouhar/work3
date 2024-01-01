@@ -11,11 +11,7 @@
     <a-scene embedded arjs>
         <!-- AR entity to be manipulated -->
         <a-entity 
-        id="interactiveEntity"
-         position="0 0.5 0" 
-         scale="1 1 1" 
-         gltf-model="#saturn-orbiter">
-          <!-- You can use your own 3D model here -->
+        interactiveEntity.setAttribute('material', 'color', 'red');>
         </a-entity>
         <a-entity camera></a-entity>
     </a-scene>
