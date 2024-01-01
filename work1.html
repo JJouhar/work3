@@ -22,7 +22,7 @@
             position="-0 0.1 -8"
             obj-model="obj: decor.obj"
             mtl="mtl: decor.mtl"
-            scale="0.15 0.15 0.15" >
+            scale="1 1 1" >
         </a-entity>
         <a-entity camera></a-entity>
     </a-scene>
@@ -33,7 +33,7 @@
             // Example: Change color of the AR entity when spacebar is pressed
             const interactiveEntity = document.getElementById('interactiveEntity')
             interactiveEntity.removeAttribute('obj-model');
-            interactiveEntity.setAttribute('gltf-model:saturn-orbiter.gltf');
+            interactiveEntity.setAttribute('gltf-model','saturn-orbiter.gltf');
         }
         });
     </script>
