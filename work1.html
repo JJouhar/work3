@@ -16,6 +16,14 @@
     <script>
         // Get the AR entity
         const interactiveEntity = document.getElementById('interactiveEntity');
+           // Listen for keydown event on the window
+        window.addEventListener('keydown', (event) => {
+        // Check if the pressed key is the spacebar (key code 32)
+        if (event.code === 'Space') {
+            // Example: Change color of the AR entity when spacebar is pressed
+            interactiveEntity.setAttribute('material', 'color', 'green');
+        }
+        });
     </script>
     
 </body>
