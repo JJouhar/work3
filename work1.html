@@ -11,6 +11,7 @@
     <a-scene embedded arjs>
         <!-- AR entity to be manipulated -->
         <a-box 
+            id="interactiveEntity"
             position="-0 0.1 -8" rotation="0 45 45" 
             material="color: red;">
         </a-box>
@@ -22,7 +23,7 @@
         if (event.code === 'Space') {
             // Example: Change color of the AR entity when spacebar is pressed
             const interactiveEntity = document.getElementById('interactiveEntity')
-            interactiveEntity.setAttribute('color', 'red');
+            interactiveEntity.setAttribute('material','color: yellow');
         }
         });
     </script>
