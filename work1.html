@@ -10,7 +10,10 @@
 <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
         <!-- AR entity to be manipulated -->
-        <a-entity id="interactiveEntity" position="-0 0.1 -8" scale="1 1 1" color="blue"> </a-entity>
+        <a-box 
+            position="-0 0.1 -8" rotation="0 45 45" 
+            material="color: red;">
+        </a-box>
         <a-entity camera></a-entity>
     </a-scene>
     <script>
