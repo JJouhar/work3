@@ -9,15 +9,14 @@
 </head>
 <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
-        <a-assets>
-            <img id="decor" src="decor.jpg" />
-        </a-assets> 
-        <a-sphere 
-        position="-0 0.1 -8" 
-        material="src: #decor; transparent: true; opacity: 0.95;">
-        </a-sphere>
+        <!-- AR entity to be manipulated -->
+        <a-entity id="interactiveEntity" position="0 0.5 0" scale="1 1 1" gltf-model="#saturn-orbiter"></a-entity>
         <a-entity camera></a-entity>
     </a-scene>
+    <script>
+        // Get the AR entity
+        const interactiveEntity = document.getElementById('interactiveEntity');
+    </script>
     
 </body>
 </html>
